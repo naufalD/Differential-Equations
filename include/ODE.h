@@ -3,8 +3,10 @@
 
 #include <functional>
 
-double differentiateExtrap(double x, std::function<double(double, double)> theFunction);
-double odeEuler(double t, double yMinus1, std::function<double(double, double)> theFunction);
-double odeRK2(double t, std::function<double(double, double)> theFunction);
+using namespace std;
+
+vector<double> odeEuler(double t, vector<double> yMinus1, function<vector<double>(double, vector<double>)> theFunction);
+vector<double> odeRK2(double t, vector<double> yMinus1, function<vector<double>(double, vector<double>)> theFunction);
+vector<double> odeRK4(double t, vector<double> yMinus1, function<vector<double>(double, vector<double>)> theFunction);
 
 #endif // ODE_H
